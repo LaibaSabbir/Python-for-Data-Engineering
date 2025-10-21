@@ -144,3 +144,66 @@ some_floats = [1.1, 2.2, 3.3, 4.4, 5.5, 6.6, 7.7, 8.8, 9.9]
 
 print(sum(some_floats, 0.5))
 print(sum({-10: 'x', -20: 'y', -30: 'z'},50))
+
+
+#######################################################################
+##########DATE TIME##########
+import datetime 
+from datetime import date 
+
+current_time = datetime.datetime.now() 
+print("Current Date and Time:", current_time) 
+
+
+d = date(2025, 5, 2) 
+print(d)   #2025-05-02 
+
+from datetime import time 
+#It represents a time of day (hour, minute, second, microsecond). The syntax of the time class is as follows:
+# datetime.time(hour=0, minute=0, second=0, microsecond=0) 
+
+t = time(14, 30) 
+print(t) 
+
+from datetime import datetime 
+# Combines both date and time into a single object. The syntax of the datetime class is as follows:
+# datetime.datetime(year, month, day, hour=0, minute=0, second=0, microsecond=0) 
+
+dt = datetime(2025, 5, 2, 14, 30) 
+print(dt) 
+
+from datetime import datetime, timedelta 
+# The timedelta class represents a duration, i.e., the difference between two dates or times. It performs arithmetic with date, time, or datetime objects. The syntax of the timedelta class is as follows:
+# datetime.timedelta(days=0, seconds=0, microseconds=0, milliseconds=0, minutes=0, hours=0, weeks=0)
+
+start = datetime(2025, 5, 2) 
+duration = timedelta(days=10) 
+end = start + duration 
+print("End date:", end) 
+
+date1 = datetime(2025, 5, 12) 
+date2 = datetime(2025, 5, 2) 
+difference = date1 - date2 
+print("Difference in days:", difference.days) 
+
+from datetime import datetime 
+
+# The strftime() method generates a string representation of a date, time, or datetime object using a specified format.
+now = datetime(2025, 5, 2, 14, 30) 
+formatted = now.strftime("%Y-%m-%d %H:%M:%S") 
+print(formatted) 
+
+#Use the strptime() method from the datetime class:
+date_str = "2025-05-02"  
+dt = datetime.strptime(date_str, "%Y-%m-%d")  
+print(dt)
+
+
+# How to compare two dates in Python?
+# Two datetime or date objects can be compared directly using comparison operators like ==, <, >, etc.
+
+from datetime import date 
+
+d1 = date(2025, 5, 2) 
+d2 = date(2025, 5, 10) 
+print(d1 < d2)
